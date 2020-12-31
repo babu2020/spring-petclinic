@@ -6,7 +6,7 @@ node {
   stage('Clone PetClinic') {
     //Clone spring-petclinic project from GitHub repository
     git branch: 'master',
-        url:    '/Users/devender.babu/Documents/gitprojects/project930PM/spring-petclinic'
+        url:    'https://github.com/babu2020/spring-petclinic.git'
   }
 
   stage('Build & Install') {
@@ -36,12 +36,12 @@ node {
   }
 
   stage('Publish To Artifactory'){
-   def server = Artifactory.newServer url: "https://devenderserver.jfrog.io/artifactory", username: "admin", password: "Password123"
+   def server = Artifactory.newServer url: ${ARTIFACTORY_URL}, username: ${ARTIFACTORY_USER_NAME}, password: ${ARTIFACTORY_PASSWORD}
    def uploadSpec = """{
        "files": [
             {
               "pattern": "target/*.jar",
-              "target" : "example-repo-local",
+              "target" : ${ARTIFACTORY_TARGET_REPO},
               "props"  : "Unit-Tested=Yes"
             }
         ]
