@@ -40,7 +40,7 @@ stage('Clone PetClinic') {
 */
 
   stage('Publish To Artifactory'){
-   def server = Artifactory.newServer url: ${ARTIFACTORY_URL}, username: ${ARTIFACTORY_USER_NAME}, password: ${ARTIFACTORY_PASSWORD}
+   def server = Artifactory.newServer url: "https://devenderserver.jfrog.io/artifactory", username: "admin", password: "Password123" 
    def uploadSpec = """{
        "files": [
             {
