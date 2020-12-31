@@ -27,7 +27,7 @@ node {
 
   stage('Create Image - mvnw'){
     //Create pet-clinic application image
-    sh './mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=pet-clinician-spring-boot-image'
+    sh './mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=my-pet-clinic-spring-boot-image'
   }
 
   stage('Create Image - Dockerfile'){
