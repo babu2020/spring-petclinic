@@ -41,7 +41,7 @@ node {
        "files": [
             {
               "pattern": "target/*.jar",
-              "target" : "\${ARTIFACTORY_TARGET_REPO}",
+              "target" : ${ARTIFACTORY_TARGET_REPO},
               "props"  : "Unit-Tested=Yes"
             }
         ]
