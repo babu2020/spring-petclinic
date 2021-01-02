@@ -6,6 +6,10 @@ node {
   properties([pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('')])])
   checkout scm
 
+  triggers {
+    pollSCM('') //Empty quotes tells it to build on a push
+  }  
+
   stage('Clone PetClinic') {
     //Clone spring-petclinic project from GitHub repository
     git branch: 'master',
