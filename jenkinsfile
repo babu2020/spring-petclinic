@@ -3,6 +3,8 @@ node {
       BUILD_NUMBER = '1.3.0'
   }
 
+  properties([pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('')])])  
+
   stage('Clone PetClinic') {
     //Clone spring-petclinic project from GitHub repository
     git branch: 'master',
