@@ -6,7 +6,7 @@ node {
   stage('Clone PetClinic') {
     //Clone spring-petclinic project from GitHub repository
     git branch: 'master',
-        url:    'https://github.com/vishalnigam/spring-petclinic.git'
+        url:    'https://github.com/babu2020/spring-petclinic.git'
   }
   
   stage('Build & Install') {
