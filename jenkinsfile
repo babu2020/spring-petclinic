@@ -36,12 +36,12 @@ node {
   }
   
   stage('Publish To Artifactory'){ 
-   def server = Artifactory.newServer url: '$ARTIFACTORY_URL', username: '$ARTIFACTORY_USER_NAME', password: '$ARTIFACTORY_PASSWORD'
+   def server = Artifactory.newServer url: "${ARTIFACTORY_URL}", username: "${ARTIFACTORY_USER_NAME}", password: "${ARTIFACTORY_PASSWORD}"
    def uploadSpec = """{
        "files": [
             { 
               "pattern": "target/*.jar",
-              "target" : "$ARTIFACTORY_TARGET_REPO",
+              "target" : "${ARTIFACTORY_TARGET_REPO}",
               "props"  : "Unit-Tested=Yes"
             }
         ]
