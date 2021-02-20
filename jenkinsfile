@@ -27,6 +27,7 @@ node {
   
   stage('Create Image - mvnw'){
     //Create pet-clinic application image
+    sh 'whoami'
     sh './mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=pet-clinician-spring-boot-image -Dmaven.repo.local=/var/lib/jenkins/.m2/repository/'  
   }
   
